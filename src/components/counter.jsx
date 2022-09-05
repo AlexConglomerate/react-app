@@ -22,7 +22,7 @@ const Counter = () => {
     }
 
     const handleChangeTag = () => {
-        setTags(['tag4', 'tag5'])
+        setTags(['tag4', 'tag10'])
     }
 
 
