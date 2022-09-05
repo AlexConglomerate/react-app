@@ -1,17 +1,27 @@
 import React from "react";
 
 const Counter = () => {
-    const count = 0
+    let count = 1
     const formatCount = () => {
         return count === 0 ? "empty" : count
     }
-    const imageUrl = "https://picsum.photos/200"
+
+    const getBadgeClasses = () => {
+        let classes = "badge m-2 "
+        classes += count === 0 ? "bg-warning" : "bg-primary"
+        return classes
+    }
+
+    const handleIncrement = () => {
+        count += 1
+        console.log(count)
+        console.log(`increment`)
+    }
+
     return (
         <>
-            <img src={imageUrl} alt="image"/>
-
-            <span className="badge bg-primary m-2">{formatCount()}</span>
-            <button className='btn bg-primary btn-sm m-2' >+</button>
+            <span className={getBadgeClasses()}>{formatCount()}</span>
+            <button className='btn bg-primary btn-sm m-2' onClick={handleIncrement}>+</button>
         </>
     )
 }
