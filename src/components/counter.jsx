@@ -2,12 +2,13 @@ import React from "react";
 
 const Counter = () => {
     const count = 0
-    const x = <h1>empty</h1>
     const formatCount = () => {
-        return count === 0 ? x : count
+        return count === 0 ? "empty" : count
     }
+    const imageUrl = "https://picsum.photos/200"
     return (
         <>
+            <img src={imageUrl} alt="image"/>
             <span>{formatCount()}</span>
             <button>+</button>
         </>
