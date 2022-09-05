@@ -9,8 +9,9 @@ const Counter = () => {
     return (
         <>
             <img src={imageUrl} alt="image"/>
-            <span>{formatCount()}</span>
-            <button>+</button>
+
+            <span className="badge bg-primary m-2">{formatCount()}</span>
+            <button className='btn bg-primary btn-sm m-2' >+</button>
         </>
     )
 }
