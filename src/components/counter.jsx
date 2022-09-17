@@ -25,6 +25,8 @@ const Counter = (props) => {
 
     return (
         <div>
+            {/*{props.children}*/}
+            <span>{props.name}</span>
             <span className={getBadgeClasses()}>{formatValue()}</span>
             <button className='btn bg-primary btn-sm m-2' onClick={handleIncrement}>+</button>
             <button className='btn bg-primary btn-sm m-2' onClick={handleDecrement}>-</button>
