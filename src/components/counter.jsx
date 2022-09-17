@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 
 const Counter = (props) => {
-    console.log(props)
-    const [value, setValue] = useState(props.value)
 
+    // const [value, setValue] = useState(props.value)
+    const {value} = props
     const formatValue = () => {
         return value === 0 ? "empty" : value
     }
@@ -15,13 +15,15 @@ const Counter = (props) => {
     }
 
     const handleIncrement = () => {
+        console.log(`handleIncrement`)
         // props.value = props.value + 1  // не будет работать, т.к. props.value доступна только для чтения
         // Мы может изменять только useState, а не пропсы, которые задаём снаружи
-        setValue((prevState) => prevState + 1)
+        // setValue((prevState) => prevState + 1)
     }
 
     const handleDecrement = () => {
-        setValue((prevState) => prevState - 1)
+        console.log(`handleDecrement`)
+        // setValue((prevState) => prevState - 1)
     }
 
 
