@@ -15,6 +15,8 @@ const Counter = (props) => {
     }
 
     const handleIncrement = () => {
+        // props.value = props.value + 1  // не будет работать, т.к. props.value доступна только для чтения
+        // Мы может изменять только useState, а не пропсы, которые задаём снаружи
         setValue((prevState) => prevState + 1)
     }
 
@@ -25,7 +27,6 @@ const Counter = (props) => {
 
     return (
         <div>
-            {/*{props.children}*/}
             <span>{props.name}</span>
             <span className={getBadgeClasses()}>{formatValue()}</span>
             <button className='btn bg-primary btn-sm m-2' onClick={handleIncrement}>+</button>
