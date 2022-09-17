@@ -32,8 +32,12 @@ const Counter = (props) => {
             <button className='btn bg-primary btn-sm m-2' onClick={handleIncrement}>+</button>
             <button className='btn bg-primary btn-sm m-2' onClick={handleDecrement}>-</button>
             {/*Мы не можем из дочернего компонента изменять родительский
-            Поэтому мы передаём в дочерний компонент метод, из родителького компонента*/}
-            <button className="btn btn-danger btn-sm m-2" onClick={props.onDelete}>Delete</button>
+            Поэтому мы передаём в дочерний компонент метод, из родительского компонента*/}
+            <button
+                className="btn btn-danger btn-sm m-2"
+                onClick={() => props.onDelete(props.id)}
+            >Delete
+            </button>
         </div>
     )
 }

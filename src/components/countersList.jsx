@@ -9,16 +9,17 @@ const CountersList = () => {
         {id: 3, value: 0, name: "WebStorm"},
         {id: 4, value: 0, name: "Uzbekistan"}
     ])
-    const handleDelete = () => {
-        console.log(`999`)
-
+    const handleDelete = (id) => {
         // setCounters([...counters, {id: 5, value: 0, name: "USA"}]) // для добавления компонента
         // setCounters(counters.filter(i => (i.id != "3"))) // удалить третий компонент
+        // setCounters(counters.filter(i => (i.id != id))) // удалить компонент
+        const newCounters = counters.filter(i => (i.id != id))
+        setCounters(newCounters) // удалить третий компонент
 
     }
     return <>
         {counters.map(count => (
-            <Counter key={count.id} value={count.value} name={count.name} onDelete={handleDelete}>
+            <Counter id={count.id} key={count.id} value={count.value} name={count.name} onDelete={handleDelete}>
                 {/*<span>{count.name}</span>*/}
             </Counter>
         ))}
