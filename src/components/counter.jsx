@@ -13,7 +13,6 @@ const Counter = (props) => {
         return classes
     }
 
-
     return (
         <div>
             <span>{props.name}</span>

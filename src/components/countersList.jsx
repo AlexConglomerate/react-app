@@ -14,15 +14,13 @@ const CountersList = () => {
     const [counters, setCounters] = useState(initialState)
 
     const handleDelete = (id) => {
-        const newCounters = counters.filter(i => (i.id != id))
+        const newCounters = counters.filter(i => i.id != id)
         setCounters(newCounters)
     }
 
     const changeValue = (id, number) => {
         const updateArr = counters.map(i => {
-            if (i.id === id) {
-                i.value += number
-            }
+            if (i.id === id) i.value += number
             return i
         })
         setCounters(updateArr)
